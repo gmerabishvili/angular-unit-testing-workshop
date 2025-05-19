@@ -1,0 +1,52 @@
+header, footer {
+  background: #306bff;
+  color: #ffffff;
+  padding: 24px;
+
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .icon-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+}
+
+/*
+ * Sticky Footer Styles
+ */
+
+.main-container {
+  min-height: 85vh !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh !important;
+}
+
+.content {
+  flex: 1;
+}
+
+/*
+ * Make the component injected by <router-outlet> full height:
+ */
+
+main {
+  display: flex;
+  flex-direction: column;
+  > *:not(router-outlet) {
+
+    flex: 1;
+    display: block;
+  }
+}
