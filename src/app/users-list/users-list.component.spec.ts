@@ -96,13 +96,13 @@ describe('UsersListComponent - WITHOUT TestBed', () => {
   const newUser: User = {name: 'New User', email: 'new@example.com', role: 'User'};
 
   beforeEach(() => {
-    usersService = jasmine.createSpyObj('UsersService', ['getUsers', 'addUser', 'updateUser']);
+    usersService = jasmine.createSpyObj<UsersService>(['getUsers', 'addUser', 'updateUser']);
     usersService.getUsers.and.returnValue(of(mockUsers));
     usersService.addUser.and.returnValue(of(newUser))
 
-    dialog = jasmine.createSpyObj('MatDialog', ['open']);
+    dialog = jasmine.createSpyObj<MatDialog>( ['open']);
 
-    snackBarService = jasmine.createSpyObj('SnackbarService', ['show']);
+    snackBarService = jasmine.createSpyObj<SnackbarService>( ['show']);
 
     component = new UsersListComponent(usersService, dialog, snackBarService)
   });

@@ -20,8 +20,8 @@ describe('UserFormDialogComponent', () => {
   const mockRoles = ['Admin', 'User', 'Manager'];
 
   beforeEach(() => {
-    dialogRef = jasmine.createSpyObj('MatDialogRef', ['close']);
-    usersService = jasmine.createSpyObj('UsersService', ['getRoles']);
+    dialogRef = jasmine.createSpyObj<MatDialogRef<UserFormDialogComponent>>( ['close']);
+    usersService = jasmine.createSpyObj<UsersService>( ['getRoles']);
     usersService.getRoles.and.returnValue(of(mockRoles));
     formBuilder = new FormBuilder();
 

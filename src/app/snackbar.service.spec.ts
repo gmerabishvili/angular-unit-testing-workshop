@@ -6,7 +6,7 @@ describe('SnackbarService', () => {
   let snackBar: jasmine.SpyObj<MatSnackBar>;
 
   beforeEach(() => {
-    snackBar = jasmine.createSpyObj('MatSnackBar', ['open']);
+    snackBar = jasmine.createSpyObj<MatSnackBar>( ['open']);
     service = new SnackbarService(snackBar);
   });
 
